@@ -13,9 +13,12 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 
 _Hint, search type 1 vs type 2 slowly changing dimensions._
 
+In type 1 any changes to the customer's address will overwrite the existing record in the database, meaning that only the most recent address will be stored, with no historical data retained.
+In type 2 changes to the customer's address are tracked over time by creating new records for each change, allowing for historical analysis and tracking of changes to addresses over time. 
+
 Bonus: Are there privacy implications to this, why or why not?
 ```
-Your answer...
+As type 2 retains more information, including historical addresses, there might be privacy concerns. Storing historical addresses could potentially expose sensitive information about a customer's past locations, which could be a privacy risk if not handled securely.
 ```
 
 ## Question 4
@@ -23,7 +26,9 @@ Review the AdventureWorks Schema [here](https://i.stack.imgur.com/LMu4W.gif)
 
 Highlight at least two differences between it and your ERD. Would you change anything in yours?
 ```
-Your answer...
+The first difference is that the AdventureWorks Schema is divided by business categories and is colour coded, which allows to see relations between tables more clearly.
+The second difference is that the AdventureWorks Schema has PK, FK and UKs listed on each table.
+I would add primary and foreign key indicators to my ERDs.
 ```
 
 # Criteria
